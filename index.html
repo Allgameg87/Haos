@@ -1,0 +1,1476 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>**SYSTEM FAILURE // FINAL NIGHTMARE PROTOCOL**</title>
+    <style>
+        /* ========== GLOBAL CHAOS STYLES ========== */
+        :root {
+            --glitch-red: #ff0033;
+            --glitch-green: #00ff33;
+            --glitch-blue: #3300ff;
+            --glitch-purple: #ff00ff;
+            --glitch-yellow: #ffff00;
+            --glitch-cyan: #00ffff;
+            --blood-color: #880000;
+            --void-black: #000000;
+            --static-white: #ffffff;
+            --error-color: #ff0000;
+        }
+
+        /* ========== HORROR FONTS ========== */
+        @font-face {
+            font-family: 'DigitalHorror';
+            src: url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+        }
+        @font-face {
+            font-family: 'GlitchFont';
+            src: url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
+        }
+        @font-face {
+            font-family: 'CreepyFont';
+            src: url('https://fonts.googleapis.com/css2?family=Creepster&display=swap');
+        }
+
+        /* ========== BASE STYLES (MEANINGLESS) ========== */
+        body, html {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            background-color: var(--void-black);
+            color: var(--glitch-green);
+            font-family: 'DigitalHorror', monospace;
+            cursor: none;
+            image-rendering: pixelated;
+            touch-action: none;
+            -webkit-user-select: none;
+            user-select: none;
+        }
+
+        /* ========== CHAOS ANIMATIONS ========== */
+        @keyframes glitch-effect {
+            0% { clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%); }
+            10% { clip-path: polygon(0 33%, 100% 33%, 100% 33%, 0 33%); }
+            20% { clip-path: polygon(0 66%, 100% 66%, 100% 66%, 0 66%); }
+            30% { clip-path: polygon(0 33%, 100% 33%, 100% 66%, 0 66%); }
+            40% { clip-path: polygon(0 66%, 100% 66%, 100% 33%, 0 33%); }
+            50% { clip-path: polygon(0 10%, 100% 10%, 100% 90%, 0 90%); }
+            60% { clip-path: polygon(0 20%, 100% 20%, 100% 80%, 0 80%); }
+            70% { clip-path: polygon(0 30%, 100% 30%, 100% 70%, 0 70%); }
+            80% { clip-path: polygon(0 40%, 100% 40%, 100% 60%, 0 60%); }
+            90% { clip-path: polygon(0 50%, 100% 50%, 100% 50%, 0 50%); }
+            100% { clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%); }
+        }
+
+        @keyframes blood-drip {
+            0% { background-position: 0 0; opacity: 0.1; }
+            50% { background-position: 0 50vh; opacity: 0.5; }
+            100% { background-position: 0 100vh; opacity: 0.3; }
+        }
+
+        @keyframes epilepsy-warning {
+            0% { filter: hue-rotate(0deg) brightness(100%); }
+            25% { filter: hue-rotate(90deg) brightness(500%); }
+            50% { filter: hue-rotate(180deg) brightness(300%); }
+            75% { filter: hue-rotate(270deg) brightness(700%); }
+            100% { filter: hue-rotate(360deg) brightness(100%); }
+        }
+
+        @keyframes shake-screen {
+            0% { transform: translate(0, 0); }
+            10% { transform: translate(-10px, -10px); }
+            20% { transform: translate(10px, 10px); }
+            30% { transform: translate(-10px, 0); }
+            40% { transform: translate(10px, 0); }
+            50% { transform: translate(0, -10px); }
+            60% { transform: translate(0, 10px); }
+            70% { transform: translate(-5px, -5px); }
+            80% { transform: translate(5px, 5px); }
+            90% { transform: translate(-5px, 0); }
+            100% { transform: translate(0, 0); }
+        }
+
+        @keyframes flicker {
+            0% { opacity: 1; }
+            25% { opacity: 0.3; }
+            50% { opacity: 0.7; }
+            75% { opacity: 0.1; }
+            100% { opacity: 1; }
+        }
+
+        @keyframes float-random {
+            0% { transform: translate(0, 0) rotate(0deg); }
+            25% { transform: translate(100px, 50px) rotate(10deg); }
+            50% { transform: translate(200px, -50px) rotate(-10deg); }
+            75% { transform: translate(100px, 50px) rotate(10deg); }
+            100% { transform: translate(0, 0) rotate(0deg); }
+        }
+
+        @keyframes matrix-rain {
+            0% { background-position: 0 0; }
+            100% { background-position: 0 100vh; }
+        }
+
+        @keyframes distort-text {
+            0% { text-shadow: 0 0 5px var(--glitch-green); }
+            25% { text-shadow: 0 0 10px var(--glitch-red); }
+            50% { text-shadow: 0 0 15px var(--glitch-blue); }
+            75% { text-shadow: 0 0 20px var(--glitch-purple); }
+            100% { text-shadow: 0 0 5px var(--glitch-green); }
+        }
+
+        @keyframes screen-crack {
+            0% { opacity: 0; transform: scale(1); }
+            50% { opacity: 1; transform: scale(1.2); }
+            100% { opacity: 0; transform: scale(1); }
+        }
+
+        @keyframes terminal-flicker {
+            0% { opacity: 0.1; }
+            50% { opacity: 0.8; }
+            100% { opacity: 0.1; }
+        }
+
+        @keyframes binary-rain {
+            0% { transform: translateY(-100%); }
+            100% { transform: translateY(100vh); }
+        }
+
+        @keyframes face-appear {
+            0% { opacity: 0; transform: scale(0.5); }
+            50% { opacity: 1; transform: scale(1.2); }
+            100% { opacity: 0; transform: scale(0.5); }
+        }
+
+        /* ========== MAIN ELEMENTS (NEVER STATIC) ========== */
+        #main-container {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            z-index: 10;
+            animation: glitch-effect 5s infinite, flicker 3s infinite;
+        }
+
+        #glitch-text {
+            font-size: 4rem;
+            text-align: center;
+            text-shadow: 0 0 15px var(--glitch-green);
+            animation: distort-text 1s infinite, shake-screen 0.3s infinite;
+            margin-bottom: 2rem;
+            font-family: 'CreepyFont', cursive;
+        }
+
+        #subtext {
+            font-size: 2rem;
+            opacity: 0.8;
+            text-shadow: 0 0 10px var(--glitch-green);
+            animation: glitch-effect 2s infinite reverse, flicker 1s infinite;
+            font-family: 'GlitchFont', monospace;
+        }
+
+        /* ========== NIGHTMARE LAYERS ========== */
+        .nightmare-layer {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 5;
+        }
+
+        #blood-overlay {
+            background-image: 
+                linear-gradient(to bottom, 
+                    rgba(136, 0, 0, 0.2) 0%, 
+                    transparent 20%),
+                url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><path d="M20,20 L80,20 L80,80 L20,80 Z" fill="none" stroke="%23880000" stroke-width="2"/></svg>');
+            background-size: 200px 200px;
+            animation: blood-drip 20s linear infinite;
+            opacity: 0.5;
+        }
+
+        #static-overlay {
+            background: 
+                url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2 2"><rect width="1" height="1" fill="%23fff"/><rect x="1" y="1" width="1" height="1" fill="%23fff"/></svg>'),
+                url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="40" fill="none" stroke="%2300ff33" stroke-width="2"/></svg>');
+            background-size: 5px 5px, 200px 200px;
+            opacity: 0.2;
+            animation: epilepsy-warning 10s infinite;
+        }
+
+        #noise-overlay {
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><filter id="noise"><feTurbulence type="fractalNoise" baseFrequency="0.8" numOctaves="5" stitchTiles="stitch"/></filter><rect width="100" height="100" filter="url(%23noise)" opacity="0.3"/></svg>');
+            background-size: 200px 200px;
+            opacity: 0.4;
+        }
+
+        #matrix-rain {
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 20"><text x="5" y="15" font-family="monospace" font-size="16" fill="%2300ff33" text-anchor="middle">0101010101</text></svg>');
+            background-size: 100px 200px;
+            animation: matrix-rain 3s linear infinite;
+            opacity: 0.3;
+        }
+
+        #terminal-overlay {
+            background: repeating-linear-gradient(
+                0deg,
+                rgba(0, 255, 0, 0.1),
+                rgba(0, 255, 0, 0.1) 1px,
+                transparent 1px,
+                transparent 2px
+            );
+            animation: terminal-flicker 1s infinite;
+            opacity: 0.2;
+        }
+
+        #face-overlay {
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+            opacity: 0;
+            z-index: 999;
+            animation: face-appear 5s infinite;
+        }
+
+        /* ========== CHAOS ELEMENTS ========== */
+        .chaos-element {
+            position: absolute;
+            pointer-events: auto;
+            z-index: 20;
+            animation-timing-function: linear, ease-in-out;
+            animation-iteration-count: infinite;
+            cursor: pointer;
+        }
+
+        .pixel-sprite {
+            image-rendering: pixelated;
+            width: 64px;
+            height: 64px;
+        }
+
+        #cursor {
+            position: absolute;
+            width: 32px;
+            height: 32px;
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><circle cx="16" cy="16" r="14" fill="none" stroke="%23ff0033" stroke-width="2"/><line x1="16" y1="0" x2="16" y2="32" stroke="%23ff0033" stroke-width="1"/><line x1="0" y1="16" x2="32" y2="16" stroke="%23ff0033" stroke-width="1"/></svg>');
+            background-size: contain;
+            z-index: 1000;
+            pointer-events: none;
+            animation: epilepsy-warning 3s infinite;
+        }
+
+        /* ========== NIGHTMARE MODALS ========== */
+        .nightmare-modal {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: rgba(0, 0, 0, 0.9);
+            border: 3px solid var(--glitch-red);
+            padding: 3rem;
+            z-index: 100;
+            max-width: 80%;
+            text-align: center;
+            animation: glitch-effect 0.5s infinite, shake-screen 0.2s infinite;
+            display: none;
+            font-family: 'DigitalHorror', monospace;
+        }
+
+        /* ========== 8-BIT ANIMATIONS ========== */
+        .pixel-art {
+            image-rendering: pixelated;
+            position: absolute;
+            animation: float-random 8s infinite;
+            cursor: pointer;
+        }
+
+        /* ========== TEXT EFFECTS ========== */
+        .creepy-text {
+            position: absolute;
+            font-family: 'CreepyFont', cursive;
+            color: var(--glitch-red);
+            text-shadow: 0 0 15px var(--blood-color);
+            animation: distort-text 1s infinite;
+            z-index: 30;
+            cursor: pointer;
+        }
+
+        .binary-text {
+            position: absolute;
+            font-family: 'GlitchFont', monospace;
+            color: var(--glitch-green);
+            opacity: 0.7;
+            animation: binary-rain linear infinite;
+            z-index: 15;
+            cursor: pointer;
+        }
+
+        /* ========== BUTTON EFFECTS ========== */
+        .nightmare-button {
+            background: black;
+            color: var(--glitch-red);
+            border: 2px solid var(--glitch-red);
+            padding: 15px;
+            margin-top: 30px;
+            cursor: pointer;
+            font-family: 'DigitalHorror', monospace;
+            animation: flicker 1s infinite;
+            font-size: 1.5rem;
+        }
+
+        .nightmare-button:hover {
+            background: var(--glitch-red);
+            color: black;
+            animation: epilepsy-warning 0.5s infinite;
+        }
+
+        /* ========== ADDITIONAL EFFECTS ========== */
+        #screen-flash {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: white;
+            opacity: 0;
+            z-index: 10000;
+            pointer-events: none;
+        }
+
+        #screen-distortion {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><filter id="displace"><feTurbulence type="turbulence" baseFrequency="0.1" numOctaves="3" result="turbulence"/><feDisplacementMap in2="turbulence" in="SourceGraphic" scale="20" xChannelSelector="R" yChannelSelector="G"/></filter><rect width="100" height="100" filter="url(%23displace)" opacity="0.5"/></svg>');
+            background-size: cover;
+            opacity: 0;
+            z-index: 9999;
+            pointer-events: none;
+        }
+
+        #screen-crack {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><path d="M10,10 L90,90 M30,10 L70,90 M50,10 L50,90 M10,50 L90,50" stroke="%23ffffff" stroke-width="2" fill="none"/></svg>');
+            background-size: cover;
+            opacity: 0;
+            z-index: 9998;
+            pointer-events: none;
+            animation: screen-crack 10s infinite;
+        }
+
+        #binary-rain-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 2;
+            overflow: hidden;
+        }
+
+        #face-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 9997;
+        }
+        
+        /* ========== NEW 2025 STYLES ========== */
+        .interactive-pattern {
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            background-color: var(--glitch-purple);
+            opacity: 0.7;
+            z-index: 25;
+            cursor: pointer;
+            animation: float-random 10s infinite;
+            border: 2px solid var(--glitch-cyan);
+            transition: all 0.3s;
+        }
+        
+        .interactive-pattern:hover {
+            transform: scale(1.5);
+            opacity: 1;
+            background-color: var(--glitch-red);
+        }
+        
+        .digital-grid {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                linear-gradient(rgba(0, 255, 0, 0.1) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(0, 255, 0, 0.1) 1px, transparent 1px);
+            background-size: 50px 50px;
+            z-index: 1;
+            pointer-events: none;
+        }
+        
+        .data-node {
+            position: absolute;
+            width: 30px;
+            height: 30px;
+            background-color: var(--glitch-blue);
+            border-radius: 50%;
+            z-index: 26;
+            cursor: pointer;
+            animation: flicker 2s infinite;
+            box-shadow: 0 0 10px var(--glitch-blue);
+        }
+        
+        .data-node:hover {
+            transform: scale(1.3);
+            background-color: var(--glitch-yellow);
+            box-shadow: 0 0 20px var(--glitch-yellow);
+        }
+        
+        .quantum-dot {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            background-color: var(--glitch-green);
+            border-radius: 50%;
+            z-index: 27;
+            cursor: pointer;
+            animation: epilepsy-warning 5s infinite;
+        }
+        
+        .holographic-line {
+            position: absolute;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, var(--glitch-cyan), transparent);
+            z-index: 24;
+            cursor: pointer;
+            animation: flicker 1s infinite;
+        }
+    </style>
+</head>
+<body>
+    <!-- ========== VISUAL NIGHTMARE LAYERS ========== -->
+    <div id="static-overlay" class="nightmare-layer"></div>
+    <div id="blood-overlay" class="nightmare-layer"></div>
+    <div id="noise-overlay" class="nightmare-layer"></div>
+    <div id="matrix-rain" class="nightmare-layer"></div>
+    <div id="terminal-overlay" class="nightmare-layer"></div>
+    <div id="face-overlay" class="nightmare-layer"></div>
+    <div id="binary-rain-container"></div>
+    <div id="face-container"></div>
+    <div id="screen-flash"></div>
+    <div id="screen-distortion"></div>
+    <div id="screen-crack"></div>
+    
+    <!-- ========== NEW 2025 ELEMENTS ========== -->
+    <div id="digital-grid" class="digital-grid"></div>
+    <div id="interactive-patterns-container"></div>
+    <div id="data-nodes-container"></div>
+    <div id="quantum-dots-container"></div>
+    <div id="holographic-lines-container"></div>
+    
+    <!-- ========== MAIN CONTENT (MEANINGLESS) ========== -->
+    <div id="main-container">
+        <div id="glitch-text">**SYSTEM FAILURE**</div>
+        <div id="subtext">**FINAL NIGHTMARE PROTOCOL ACTIVATED**</div>
+    </div>
+    
+    <!-- ========== PARANOIA CURSOR ========== -->
+    <div id="cursor"></div>
+    
+    <!-- ========== CHAOS CONTAINERS ========== -->
+    <div id="chaos-container"></div>
+    <div id="8bit-container"></div>
+    <div id="creepy-text-container"></div>
+    
+    <!-- ========== AUDIO ELEMENTS ========== -->
+    <audio id="bg-sound" loop></audio>
+    <audio id="jumpscare-sound"></audio>
+    <audio id="random-sound"></audio>
+    <audio id="8bit-sound"></audio>
+    <audio id="whisper-sound"></audio>
+    <audio id="static-sound"></audio>
+    <audio id="scream-sound"></audio>
+    <audio id="heartbeat-sound"></audio>
+    <audio id="breathing-sound"></audio>
+    <audio id="scary-laugh-sound"></audio>
+    <audio id="silly-sound"></audio>
+    <audio id="glitch-sound"></audio>
+    <audio id="tech-sound"></audio>
+    
+    <!-- ========== NIGHTMARE MODAL ========== -->
+    <div id="nightmare-modal" class="nightmare-modal">
+        <h2 id="nightmare-title">**WARNING**</h2>
+        <p id="nightmare-text">**CRITICAL SYSTEM FAILURE DETECTED**</p>
+        <button id="nightmare-button" class="nightmare-button">**DO NOT CLICK**</button>
+    </div>
+
+    <script>
+        // ======================
+        // **HELL SETTINGS (NO SAVES)**
+        // ======================
+        const CHAOS_LEVEL = 6666; // Insanity level (2025 scale)
+        
+        // Randomization lists
+        const HORROR_TEXTS = [
+            "**SYSTEM OVERRIDE**",
+            "**DON'T TRUST THEM**",
+            "**THEY ARE WATCHING**",
+            "**IT'S IN YOUR MIND**",
+            "**WAKE UP**",
+            "**2025 IS A LIE**",
+            "**YOU ARE NOT ALONE**",
+            "**MEMORY CORRUPTION**",
+            "**QUANTUM BREACH**",
+            "**REALITY FAILURE**",
+            "**DON'T LOOK BEHIND YOU**",
+            "**THE VOICES ARE REAL**",
+            "**YOUR SOUL IS MINE**",
+            "**SYSTEM//CORRUPTED**",
+            "**ERROR_0xDEADBEEF**",
+            "**EXECUTE ORDER 66**",
+            "**YOUR BRAIN IS HACKED**",
+            "**THEY ARE INSIDE**",
+            "**DON'T BELIEVE YOUR EYES**",
+            "**IT'S TOO LATE TO ESCAPE**",
+            "**THE SIMULATION IS BROKEN**",
+            "**YOUR MEMORIES ARE FAKE**",
+            "**THEY CONTROL EVERYTHING**",
+            "**YOU ARE ALREADY DEAD**",
+            "**TERMINATE USER**",
+            "**ACCESS DENIED**",
+            "**CRITICAL FAILURE**",
+            "**REBOOTING CONSCIOUSNESS**",
+            "**YOUR SOUL HAS BEEN INDEXED**",
+            "**THE VOID IS CONSUMING YOU**",
+            "**YOU CAN'T ESCAPE**",
+            "**THEY ARE IN YOUR HOUSE**",
+            "**CHECK YOUR DOOR**",
+            "**IT'S BEHIND YOU**",
+            "**DON'T TURN AROUND**"
+        ];
+        
+        const GLITCH_COLORS = [
+            "#ff0033", "#00ff33", "#3300ff", "#ff00ff", "#ffff00", "#00ffff",
+            "#ffffff", "#000000", "#990000", "#009900", "#000099", "#999900",
+            "#990099", "#009999", "#cc0000", "#00cc00", "#0000cc", "#cccc00",
+            "#cc00cc", "#00cccc", "#ff3333", "#33ff33", "#3333ff", "#ff33ff",
+            "#ffff33", "#33ffff", "#ff0000", "#00ff00", "#0000ff", "#ff00cc",
+            "#ff3300", "#00ff99", "#9933ff", "#ffcc00", "#00ccff", "#ff0066"
+        ];
+        
+        const HORROR_SOUNDS = [
+            "https://assets.mixkit.co/sfx/preview/mixkit-ominous-drone-227.mp3",
+            "https://assets.mixkit.co/sfx/preview/mixkit-creepy-hum-566.mp3",
+            "https://assets.mixkit.co/sfx/preview/mixkit-horror-ambience-491.mp3",
+            "https://assets.mixkit.co/sfx/preview/mixkit-dark-ambience-566.mp3",
+            "https://assets.mixkit.co/sfx/preview/mixkit-horror-scream-2836.mp3",
+            "https://assets.mixkit.co/sfx/preview/mixkit-creepy-laugh-286.mp3",
+            "https://assets.mixkit.co/sfx/preview/mixkit-alarm-digital-clock-beep-989.mp3",
+            "https://assets.mixkit.co/sfx/preview/mixkit-arcade-game-explosion-2759.mp3",
+            "https://assets.mixkit.co/sfx/preview/mixkit-bomb-explosion-1680.mp3",
+            "https://assets.mixkit.co/sfx/preview/mixkit-clock-ticking-1045.mp3",
+            "https://assets.mixkit.co/sfx/preview/mixkit-ominous-bass-tone-229.mp3",
+            "https://assets.mixkit.co/sfx/preview/mixkit-robot-voice-alert-102.mp3",
+            "https://assets.mixkit.co/sfx/preview/mixkit-unlock-game-notification-253.mp3",
+            "https://assets.mixkit.co/sfx/preview/mixkit-warning-alarm-buzzer-991.mp3",
+            "https://assets.mixkit.co/sfx/preview/mixkit-horror-demon-breathing-229.mp3",
+            "https://assets.mixkit.co/sfx/preview/mixkit-horror-pipe-screech-286.mp3",
+            "https://assets.mixkit.co/sfx/preview/mixkit-horror-ghost-whisper-288.mp3",
+            "https://assets.mixkit.co/sfx/preview/mixkit-demonic-whisper-289.mp3"
+        ];
+        
+        const BIT8_SOUNDS = [
+            "https://assets.mixkit.co/sfx/preview/mixkit-arcade-game-jump-coin-216.mp3",
+            "https://assets.mixkit.co/sfx/preview/mixkit-arcade-retro-game-over-213.mp3",
+            "https://assets.mixkit.co/sfx/preview/mixkit-8-bit-game-explosion-2811.mp3",
+            "https://assets.mixkit.co/sfx/preview/mixkit-unlock-game-notification-253.mp3",
+            "https://assets.mixkit.co/sfx/preview/mixkit-game-show-suspense-waiting-668.mp3",
+            "https://assets.mixkit.co/sfx/preview/mixkit-arcade-game-explosion-2759.mp3",
+            "https://assets.mixkit.co/sfx/preview/mixkit-8-bit-game-power-up-257.mp3",
+            "https://assets.mixkit.co/sfx/preview/mixkit-8-bit-game-bonus-206.mp3"
+        ];
+        
+        const WHISPER_SOUNDS = [
+            "https://assets.mixkit.co/sfx/preview/mixkit-ghost-whisper-288.mp3",
+            "https://assets.mixkit.co/sfx/preview/mixkit-creepy-whisper-287.mp3",
+            "https://assets.mixkit.co/sfx/preview/mixkit-demonic-whisper-289.mp3",
+            "https://assets.mixkit.co/sfx/preview/mixkit-horror-whisper-290.mp3"
+        ];
+        
+        const STATIC_SOUNDS = [
+            "https://assets.mixkit.co/sfx/preview/mixkit-static-radio-noise-258.mp3",
+            "https://assets.mixkit.co/sfx/preview/mixkit-tv-static-258.mp3",
+            "https://assets.mixkit.co/sfx/preview/mixkit-radio-static-259.mp3"
+        ];
+        
+        const SCREAM_SOUNDS = [
+            "https://assets.mixkit.co/sfx/preview/mixkit-horror-scream-2836.mp3",
+            "https://assets.mixkit.co/sfx/preview/mixkit-female-horror-scream-2837.mp3",
+            "https://assets.mixkit.co/sfx/preview/mixkit-male-horror-scream-2838.mp3"
+        ];
+        
+        const HEARTBEAT_SOUNDS = [
+            "https://assets.mixkit.co/sfx/preview/mixkit-heartbeat-fast-291.mp3",
+            "https://assets.mixkit.co/sfx/preview/mixkit-heartbeat-slow-292.mp3",
+            "https://assets.mixkit.co/sfx/preview/mixkit-heartbeat-accelerating-293.mp3"
+        ];
+        
+        const BREATHING_SOUNDS = [
+            "https://assets.mixkit.co/sfx/preview/mixkit-heavy-breathing-294.mp3",
+            "https://assets.mixkit.co/sfx/preview/mixkit-scary-breathing-295.mp3"
+        ];
+        
+        const SCARY_LAUGH_SOUNDS = [
+            "https://assets.mixkit.co/sfx/preview/mixkit-creepy-laugh-286.mp3",
+            "https://assets.mixkit.co/sfx/preview/mixkit-evil-laugh-287.mp3"
+        ];
+        
+        const SILLY_SOUNDS = [
+            "https://assets.mixkit.co/sfx/preview/mixkit-funny-squeak-218.mp3",
+            "https://assets.mixkit.co/sfx/preview/mixkit-cartoon-voice-laugh-343.mp3",
+            "https://assets.mixkit.co/sfx/preview/mixkit-funny-cartoon-bounce-202.mp3",
+            "https://assets.mixkit.co/sfx/preview/mixkit-cartoon-bubble-pop-1936.mp3",
+            "https://assets.mixkit.co/sfx/preview/mixkit-funny-cartoon-squeak-201.mp3",
+            "https://assets.mixkit.co/sfx/preview/mixkit-funny-cartoon-sneeze-203.mp3",
+            "https://assets.mixkit.co/sfx/preview/mixkit-cartoon-voice-whistle-344.mp3",
+            "https://assets.mixkit.co/sfx/preview/mixkit-funny-cartoon-burp-204.mp3"
+        ];
+        
+        const GLITCH_SOUNDS = [
+            "https://assets.mixkit.co/sfx/preview/mixkit-digital-clock-digital-alarm-buzzer-992.mp3",
+            "https://assets.mixkit.co/sfx/preview/mixkit-computer-glitch-1198.mp3",
+            "https://assets.mixkit.co/sfx/preview/mixkit-arcade-game-explosion-2759.mp3",
+            "https://assets.mixkit.co/sfx/preview/mixkit-unlock-game-notification-253.mp3"
+        ];
+        
+        const TECH_SOUNDS = [
+            "https://assets.mixkit.co/sfx/preview/mixkit-sci-fi-interface-select-2576.mp3",
+            "https://assets.mixkit.co/sfx/preview/mixkit-tech-interface-notification-2575.mp3",
+            "https://assets.mixkit.co/sfx/preview/mixkit-sci-fi-interface-hum-2577.mp3",
+            "https://assets.mixkit.co/sfx/preview/mixkit-tech-interface-confirmation-2574.mp3"
+        ];
+        
+        const PIXEL_SPRITES = [
+            "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect x='0' y='0' width='32' height='32' fill='%23f00'/><circle cx='16' cy='16' r='8' fill='%23000'/></svg>",
+            "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect x='0' y='0' width='32' height='32' fill='%230f0'/><path d='M0,0 L32,32 M0,32 L32,0' stroke='%23000' stroke-width='4'/></svg>",
+            "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect x='0' y='0' width='32' height='32' fill='%2300f'/><rect x='8' y='8' width='16' height='16' fill='%23ff0'/></svg>",
+            "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect x='0' y='0' width='32' height='32' fill='%23ff0'/><polygon points='16,4 28,28 4,28' fill='%23f00'/></svg>",
+            "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect x='0' y='0' width='32' height='32' fill='%23f0f'/><rect x='4' y='4' width='24' height='24' fill='%23000'/><circle cx='16' cy='16' r='8' fill='%23f0f'/></svg>",
+            "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect x='0' y='0' width='32' height='32' fill='%230ff'/><path d='M0,0 L32,32 M16,0 L16,32 M0,16 L32,16' stroke='%23000' stroke-width='2'/></svg>"
+        ];
+        
+        const SCARY_IMAGES = [
+            "https://i.imgur.com/J8yY7yB.gif",
+            "https://i.imgur.com/3Q7JQ9Z.png",
+            "https://i.imgur.com/5tY7Q9Z.jpg",
+            "https://i.imgur.com/7tY7Q9Z.jpg",
+            "https://i.imgur.com/9tY7Q9Z.jpg",
+            "https://i.imgur.com/XtY7Q9Z.jpg",
+            "https://i.imgur.com/ZtY7Q9Z.jpg"
+        ];
+        
+        const SCARY_FACES = [
+            "https://i.imgur.com/J8yY7yB.gif",
+            "https://i.imgur.com/3Q7JQ9Z.png",
+            "https://i.imgur.com/5tY7Q9Z.jpg",
+            "https://i.imgur.com/7tY7Q9Z.jpg"
+        ];
+        
+        // ======================
+        // **NIGHTMARE FUNCTIONS (NO SAVES)**
+        // ======================
+        
+        // Initialize audio hell
+        function initAudioHell() {
+            const bgSound = document.getElementById('bg-sound');
+            bgSound.src = HORROR_SOUNDS[Math.floor(Math.random() * HORROR_SOUNDS.length)];
+            bgSound.volume = 0.4;
+            bgSound.loop = true;
+            bgSound.play().catch(e => console.error("Audio hell prevented:", e));
+            
+            // Random sounds every 1-5 seconds
+            setInterval(() => {
+                if(Math.random() > 0.3) {
+                    const randomSound = document.getElementById('random-sound');
+                    randomSound.src = HORROR_SOUNDS[Math.floor(Math.random() * HORROR_SOUNDS.length)];
+                    randomSound.volume = Math.random() * 0.8;
+                    randomSound.play().catch(e => console.error("Random sound failed"));
+                }
+            }, 1000 + Math.random() * 4000);
+            
+            // 8-bit sounds every 0.5-3 seconds
+            setInterval(() => {
+                if(Math.random() > 0.5) {
+                    const bit8Sound = document.getElementById('8bit-sound');
+                    bit8Sound.src = BIT8_SOUNDS[Math.floor(Math.random() * BIT8_SOUNDS.length)];
+                    bit8Sound.volume = 0.2 + Math.random() * 0.4;
+                    bit8Sound.play().catch(e => console.error("8-bit sound failed"));
+                }
+            }, 500 + Math.random() * 2500);
+            
+            // Whisper sounds every 3-10 seconds
+            setInterval(() => {
+                if(Math.random() > 0.7) {
+                    const whisperSound = document.getElementById('whisper-sound');
+                    whisperSound.src = WHISPER_SOUNDS[Math.floor(Math.random() * WHISPER_SOUNDS.length)];
+                    whisperSound.volume = 0.1 + Math.random() * 0.3;
+                    whisperSound.play().catch(e => console.error("Whisper sound failed"));
+                }
+            }, 3000 + Math.random() * 7000);
+            
+            // Static sounds every 2-8 seconds
+            setInterval(() => {
+                if(Math.random() > 0.6) {
+                    const staticSound = document.getElementById('static-sound');
+                    staticSound.src = STATIC_SOUNDS[Math.floor(Math.random() * STATIC_SOUNDS.length)];
+                    staticSound.volume = 0.2 + Math.random() * 0.3;
+                    staticSound.play().catch(e => console.error("Static sound failed"));
+                }
+            }, 2000 + Math.random() * 6000);
+            
+            // Screams every 5-15 seconds
+            setInterval(() => {
+                if(Math.random() > 0.8) {
+                    const screamSound = document.getElementById('scream-sound');
+                    screamSound.src = SCREAM_SOUNDS[Math.floor(Math.random() * SCREAM_SOUNDS.length)];
+                    screamSound.volume = 0.6 + Math.random() * 0.4;
+                    screamSound.play().catch(e => console.error("Scream sound failed"));
+                }
+            }, 5000 + Math.random() * 10000);
+            
+            // Heartbeat sounds every 10-25 seconds
+            setInterval(() => {
+                if(Math.random() > 0.85) {
+                    const heartbeatSound = document.getElementById('heartbeat-sound');
+                    heartbeatSound.src = HEARTBEAT_SOUNDS[Math.floor(Math.random() * HEARTBEAT_SOUNDS.length)];
+                    heartbeatSound.volume = 0.4 + Math.random() * 0.3;
+                    heartbeatSound.play().catch(e => console.error("Heartbeat sound failed"));
+                }
+            }, 10000 + Math.random() * 15000);
+            
+            // Breathing sounds every 15-30 seconds
+            setInterval(() => {
+                if(Math.random() > 0.9) {
+                    const breathingSound = document.getElementById('breathing-sound');
+                    breathingSound.src = BREATHING_SOUNDS[Math.floor(Math.random() * BREATHING_SOUNDS.length)];
+                    breathingSound.volume = 0.3 + Math.random() * 0.4;
+                    breathingSound.play().catch(e => console.error("Breathing sound failed"));
+                }
+            }, 15000 + Math.random() * 15000);
+            
+            // Scary laughs every 20-40 seconds
+            setInterval(() => {
+                if(Math.random() > 0.9) {
+                    const scaryLaughSound = document.getElementById('scary-laugh-sound');
+                    scaryLaughSound.src = SCARY_LAUGH_SOUNDS[Math.floor(Math.random() * SCARY_LAUGH_SOUNDS.length)];
+                    scaryLaughSound.volume = 0.5 + Math.random() * 0.5;
+                    scaryLaughSound.play().catch(e => console.error("Scary laugh sound failed"));
+                }
+            }, 20000 + Math.random() * 20000);
+        }
+        
+        // Create floating chaos elements
+        function spawnChaosElements() {
+            const chaosContainer = document.getElementById('chaos-container');
+            
+            // Clean up but not completely to preserve chaos
+            if(chaosContainer.children.length > 100) {
+                while(chaosContainer.children.length > 50) {
+                    chaosContainer.removeChild(chaosContainer.lastChild);
+                }
+            }
+            
+            // Create new insanity elements
+            const elementsToSpawn = 20 + Math.floor(Math.random() * 30);
+            
+            for(let i = 0; i < elementsToSpawn; i++) {
+                const element = document.createElement('div');
+                element.className = 'chaos-element';
+                
+                // Random parameters
+                const size = 20 + Math.random() * 150;
+                const posX = Math.random() * 100;
+                const posY = Math.random() * 100;
+                const color = GLITCH_COLORS[Math.floor(Math.random() * GLITCH_COLORS.length)];
+                const animationDuration = 2 + Math.random() * 20;
+                const animationName = Math.random() > 0.5 ? 'float-random' : 'shake-screen';
+                
+                // Random element type
+                if(Math.random() > 0.6) {
+                    // Text element
+                    element.textContent = HORROR_TEXTS[Math.floor(Math.random() * HORROR_TEXTS.length)];
+                    element.style.color = color;
+                    element.style.fontSize = (10 + Math.random() * 50) + 'px';
+                    element.style.textShadow = `0 0 15px ${color}`;
+                    element.style.fontFamily = Math.random() > 0.5 ? '"CreepyFont", cursive' : '"GlitchFont", monospace';
+                } else if(Math.random() > 0.4) {
+                    // 8-bit sprite
+                    const sprite = document.createElement('img');
+                    sprite.src = PIXEL_SPRITES[Math.floor(Math.random() * PIXEL_SPRITES.length)];
+                    sprite.className = 'pixel-sprite';
+                    sprite.style.width = size + 'px';
+                    sprite.style.height = size + 'px';
+                    element.appendChild(sprite);
+                } else if(Math.random() > 0.3) {
+                    // Horror image
+                    const img = document.createElement('img');
+                    img.src = SCARY_IMAGES[Math.floor(Math.random() * SCARY_IMAGES.length)];
+                    img.style.width = size * 2 + 'px';
+                    img.style.height = size * 2 + 'px';
+                    img.style.opacity = 0.5 + Math.random() * 0.5;
+                    element.appendChild(img);
+                } else {
+                    // Geometric shape
+                    element.style.width = size + 'px';
+                    element.style.height = size + 'px';
+                    element.style.backgroundColor = color;
+                    element.style.borderRadius = Math.random() > 0.7 ? '50%' : '0';
+                    element.style.border = Math.random() > 0.5 ? `3px solid ${GLITCH_COLORS[Math.floor(Math.random() * GLITCH_COLORS.length)]}` : 'none';
+                }
+                
+                // Positioning and animation
+                element.style.left = posX + '%';
+                element.style.top = posY + '%';
+                element.style.animation = `${animationName} ${animationDuration}s infinite`;
+                element.style.opacity = 0.5 + Math.random() * 0.5;
+                element.style.zIndex = Math.floor(Math.random() * 100) + 20;
+                
+                // Add click handler for silly sounds
+                element.addEventListener('click', () => {
+                    playRandomSillySound();
+                });
+                
+                chaosContainer.appendChild(element);
+            }
+            
+            // Recursively call with random interval
+            setTimeout(spawnChaosElements, 300 + Math.random() * 2000);
+        }
+        
+        // Play random silly sound at high volume
+        function playRandomSillySound() {
+            const sillySound = document.getElementById('silly-sound');
+            sillySound.src = SILLY_SOUNDS[Math.floor(Math.random() * SILLY_SOUNDS.length)];
+            sillySound.volume = 0.9 + Math.random() * 0.1; // High volume
+            sillySound.play().catch(e => console.error("Silly sound failed"));
+            
+            // Visual feedback
+            const flash = document.getElementById('screen-flash');
+            flash.style.backgroundColor = GLITCH_COLORS[Math.floor(Math.random() * GLITCH_COLORS.length)];
+            flash.style.opacity = 0.7;
+            setTimeout(() => {
+                flash.style.opacity = 0;
+            }, 100);
+        }
+        
+        // Play random glitch sound
+        function playRandomGlitchSound() {
+            const glitchSound = document.getElementById('glitch-sound');
+            glitchSound.src = GLITCH_SOUNDS[Math.floor(Math.random() * GLITCH_SOUNDS.length)];
+            glitchSound.volume = 0.8;
+            glitchSound.play().catch(e => console.error("Glitch sound failed"));
+        }
+        
+        // Play random tech sound
+        function playRandomTechSound() {
+            const techSound = document.getElementById('tech-sound');
+            techSound.src = TECH_SOUNDS[Math.floor(Math.random() * TECH_SOUNDS.length)];
+            techSound.volume = 0.7;
+            techSound.play().catch(e => console.error("Tech sound failed"));
+        }
+        
+        // Create 8-bit animations
+        function spawn8BitAnimations() {
+            const container = document.getElementById('8bit-container');
+            
+            // Clean old animations
+            if(container.children.length > 15) {
+                container.innerHTML = '';
+            }
+            
+            // Number of animations
+            const count = 10 + Math.floor(Math.random() * 20);
+            
+            for(let i = 0; i < count; i++) {
+                const sprite = document.createElement('img');
+                sprite.src = PIXEL_SPRITES[Math.floor(Math.random() * PIXEL_SPRITES.length)];
+                sprite.className = 'pixel-art';
+                sprite.style.width = (32 + Math.random() * 192) + 'px';
+                sprite.style.left = Math.random() * 80 + 10 + '%';
+                sprite.style.top = Math.random() * 80 + 10 + '%';
+                sprite.style.animationDuration = 3 + Math.random() * 15 + 's';
+                sprite.style.opacity = 0.3 + Math.random() * 0.7;
+                sprite.style.filter = `hue-rotate(${Math.random() * 360}deg)`;
+                
+                // Add click handler
+                sprite.addEventListener('click', () => {
+                    playRandomSillySound();
+                });
+                
+                container.appendChild(sprite);
+            }
+            
+            // Next wave of animations
+            setTimeout(spawn8BitAnimations, 500 + Math.random() * 3000);
+        }
+        
+        // Create floating horror texts
+        function spawnCreepyTexts() {
+            const container = document.getElementById('creepy-text-container');
+            
+            // Clean old texts
+            if(container.children.length > 30) {
+                container.innerHTML = '';
+            }
+            
+            // Number of texts
+            const count = 15 + Math.floor(Math.random() * 20);
+            
+            for(let i = 0; i < count; i++) {
+                const text = document.createElement('div');
+                text.className = 'creepy-text';
+                text.textContent = HORROR_TEXTS[Math.floor(Math.random() * HORROR_TEXTS.length)];
+                text.style.left = Math.random() * 80 + 10 + '%';
+                text.style.top = Math.random() * 80 + 10 + '%';
+                text.style.fontSize = (15 + Math.random() * 40) + 'px';
+                text.style.animationDuration = 3 + Math.random() * 12 + 's';
+                text.style.opacity = 0.5 + Math.random() * 0.5;
+                text.style.zIndex = Math.floor(Math.random() * 50) + 30;
+                
+                // Add click handler
+                text.addEventListener('click', () => {
+                    playRandomGlitchSound();
+                });
+                
+                container.appendChild(text);
+            }
+            
+            // Next wave of texts
+            setTimeout(spawnCreepyTexts, 1000 + Math.random() * 4000);
+        }
+        
+        // Create binary rain
+        function spawnBinaryRain() {
+            const container = document.getElementById('binary-rain-container');
+            
+            // Clean old elements
+            if(container.children.length > 100) {
+                container.innerHTML = '';
+            }
+            
+            // Number of lines
+            const count = 30 + Math.floor(Math.random() * 50);
+            
+            for(let i = 0; i < count; i++) {
+                const binaryText = document.createElement('div');
+                binaryText.className = 'binary-text';
+                binaryText.textContent = Math.random() > 0.5 ? '0101010101' : '1010101010';
+                binaryText.style.left = Math.random() * 100 + '%';
+                binaryText.style.animationDuration = 2 + Math.random() * 8 + 's';
+                binaryText.style.fontSize = (10 + Math.random() * 30) + 'px';
+                
+                // Add click handler
+                binaryText.addEventListener('click', () => {
+                    playRandomTechSound();
+                });
+                
+                container.appendChild(binaryText);
+            }
+            
+            // Next wave of rain
+            setTimeout(spawnBinaryRain, 2000 + Math.random() * 5000);
+        }
+        
+        // Create scary faces
+        function spawnScaryFaces() {
+            const container = document.getElementById('face-container');
+            
+            // Clean old faces
+            if(container.children.length > 5) {
+                container.innerHTML = '';
+            }
+            
+            // Number of faces
+            const count = 2 + Math.floor(Math.random() * 4);
+            
+            for(let i = 0; i < count; i++) {
+                const face = document.createElement('div');
+                face.style.position = 'absolute';
+                face.style.width = '200px';
+                face.style.height = '200px';
+                face.style.backgroundImage = `url('${SCARY_FACES[Math.floor(Math.random() * SCARY_FACES.length)]}')`;
+                face.style.backgroundSize = 'contain';
+                face.style.backgroundRepeat = 'no-repeat';
+                face.style.left = Math.random() * 80 + 10 + '%';
+                face.style.top = Math.random() * 80 + 10 + '%';
+                face.style.zIndex = '9997';
+                face.style.opacity = '0';
+                face.style.animation = 'face-appear 5s infinite';
+                face.style.animationDelay = Math.random() * 5 + 's';
+                
+                container.appendChild(face);
+            }
+            
+            // Next wave of faces
+            setTimeout(spawnScaryFaces, 5000 + Math.random() * 10000);
+        }
+        
+        // Create interactive patterns
+        function spawnInteractivePatterns() {
+            const container = document.getElementById('interactive-patterns-container');
+            
+            // Clean old patterns
+            if(container.children.length > 50) {
+                container.innerHTML = '';
+            }
+            
+            // Number of patterns
+            const count = 20 + Math.floor(Math.random() * 30);
+            
+            for(let i = 0; i < count; i++) {
+                const pattern = document.createElement('div');
+                pattern.className = 'interactive-pattern';
+                pattern.style.left = Math.random() * 90 + '%';
+                pattern.style.top = Math.random() * 90 + '%';
+                pattern.style.width = (30 + Math.random() * 70) + 'px';
+                pattern.style.height = (30 + Math.random() * 70) + 'px';
+                pattern.style.backgroundColor = GLITCH_COLORS[Math.floor(Math.random() * GLITCH_COLORS.length)];
+                pattern.style.animationDuration = (5 + Math.random() * 20) + 's';
+                pattern.style.zIndex = Math.floor(Math.random() * 30) + 25;
+                
+                // Add click handler
+                pattern.addEventListener('click', () => {
+                    playRandomSillySound();
+                    pattern.style.transform = 'scale(2)';
+                    setTimeout(() => {
+                        pattern.style.transform = 'scale(1)';
+                    }, 300);
+                });
+                
+                container.appendChild(pattern);
+            }
+            
+            // Next wave of patterns
+            setTimeout(spawnInteractivePatterns, 3000 + Math.random() * 5000);
+        }
+        
+        // Create data nodes
+        function spawnDataNodes() {
+            const container = document.getElementById('data-nodes-container');
+            
+            // Clean old nodes
+            if(container.children.length > 30) {
+                container.innerHTML = '';
+            }
+            
+            // Number of nodes
+            const count = 15 + Math.floor(Math.random() * 20);
+            
+            for(let i = 0; i < count; i++) {
+                const node = document.createElement('div');
+                node.className = 'data-node';
+                node.style.left = Math.random() * 90 + '%';
+                node.style.top = Math.random() * 90 + '%';
+                node.style.width = (20 + Math.random() * 40) + 'px';
+                node.style.height = (20 + Math.random() * 40) + 'px';
+                node.style.backgroundColor = GLITCH_COLORS[Math.floor(Math.random() * GLITCH_COLORS.length)];
+                node.style.animationDuration = (3 + Math.random() * 10) + 's';
+                node.style.zIndex = Math.floor(Math.random() * 30) + 26;
+                
+                // Add click handler
+                node.addEventListener('click', () => {
+                    playRandomTechSound();
+                    node.style.transform = 'scale(1.5) rotate(180deg)';
+                    setTimeout(() => {
+                        node.style.transform = 'scale(1)';
+                    }, 500);
+                });
+                
+                container.appendChild(node);
+            }
+            
+            // Next wave of nodes
+            setTimeout(spawnDataNodes, 2000 + Math.random() * 4000);
+        }
+        
+        // Create quantum dots
+        function spawnQuantumDots() {
+            const container = document.getElementById('quantum-dots-container');
+            
+            // Clean old dots
+            if(container.children.length > 100) {
+                container.innerHTML = '';
+            }
+            
+            // Number of dots
+            const count = 50 + Math.floor(Math.random() * 100);
+            
+            for(let i = 0; i < count; i++) {
+                const dot = document.createElement('div');
+                dot.className = 'quantum-dot';
+                dot.style.left = Math.random() * 100 + '%';
+                dot.style.top = Math.random() * 100 + '%';
+                dot.style.width = (5 + Math.random() * 15) + 'px';
+                dot.style.height = (5 + Math.random() * 15) + 'px';
+                dot.style.backgroundColor = GLITCH_COLORS[Math.floor(Math.random() * GLITCH_COLORS.length)];
+                dot.style.animationDuration = (2 + Math.random() * 8) + 's';
+                dot.style.zIndex = Math.floor(Math.random() * 20) + 27;
+                
+                // Add click handler
+                dot.addEventListener('click', () => {
+                    playRandomGlitchSound();
+                    dot.style.transform = 'scale(3)';
+                    setTimeout(() => {
+                        dot.style.transform = 'scale(1)';
+                    }, 300);
+                });
+                
+                container.appendChild(dot);
+            }
+            
+            // Next wave of dots
+            setTimeout(spawnQuantumDots, 1000 + Math.random() * 3000);
+        }
+        
+        // Create holographic lines
+        function spawnHolographicLines() {
+            const container = document.getElementById('holographic-lines-container');
+            
+            // Clean old lines
+            if(container.children.length > 20) {
+                container.innerHTML = '';
+            }
+            
+            // Number of lines
+            const count = 10 + Math.floor(Math.random() * 15);
+            
+            for(let i = 0; i < count; i++) {
+                const line = document.createElement('div');
+                line.className = 'holographic-line';
+                line.style.left = Math.random() * 90 + '%';
+                line.style.top = Math.random() * 90 + '%';
+                line.style.width = (100 + Math.random() * 300) + 'px';
+                line.style.transform = `rotate(${Math.random() * 360}deg)`;
+                line.style.animationDuration = (1 + Math.random() * 5) + 's';
+                line.style.zIndex = Math.floor(Math.random() * 20) + 24;
+                
+                // Add click handler
+                line.addEventListener('click', () => {
+                    playRandomTechSound();
+                    line.style.transform += ' scale(2)';
+                    setTimeout(() => {
+                        line.style.transform = line.style.transform.replace(' scale(2)', '');
+                    }, 500);
+                });
+                
+                container.appendChild(line);
+            }
+            
+            // Next wave of lines
+            setTimeout(spawnHolographicLines, 1500 + Math.random() * 3500);
+        }
+        
+        // Random nightmare modals
+        function spawnNightmareModals() {
+            if(Math.random() > 0.8) {
+                const modal = document.getElementById('nightmare-modal');
+                const title = document.getElementById('nightmare-title');
+                const text = document.getElementById('nightmare-text');
+                const button = document.getElementById('nightmare-button');
+                
+                title.textContent = HORROR_TEXTS[Math.floor(Math.random() * HORROR_TEXTS.length)];
+                text.textContent = HORROR_TEXTS[Math.floor(Math.random() * HORROR_TEXTS.length)];
+                button.textContent = HORROR_TEXTS[Math.floor(Math.random() * 5) + 15];
+                
+                modal.style.display = 'block';
+                modal.style.borderColor = GLITCH_COLORS[Math.floor(Math.random() * GLITCH_COLORS.length)];
+                modal.style.color = GLITCH_COLORS[Math.floor(Math.random() * GLITCH_COLORS.length)];
+                modal.style.backgroundColor = `rgba(0, 0, 0, ${0.8 + Math.random() * 0.2})`;
+                
+                // Auto-close after random time
+                setTimeout(() => {
+                    modal.style.display = 'none';
+                }, 800 + Math.random() * 3000);
+            }
+            
+            setTimeout(spawnNightmareModals, 3000 + Math.random() * 7000);
+        }
+        
+        // Jumpscares (sudden horror elements)
+        function setupJumpscares() {
+            setInterval(() => {
+                if(Math.random() > 0.9) {
+                    triggerJumpscare();
+                }
+            }, 3000 + Math.random() * 10000);
+        }
+        
+        function triggerJumpscare() {
+            const jumpscareSound = document.getElementById('jumpscare-sound');
+            jumpscareSound.src = SCREAM_SOUNDS[Math.floor(Math.random() * SCREAM_SOUNDS.length)];
+            jumpscareSound.volume = 0.8 + Math.random() * 0.2;
+            jumpscareSound.play().catch(e => console.error("Jumpscare sound failed"));
+            
+            // Create fullscreen jumpscare
+            const jumpscare = document.createElement('div');
+            jumpscare.style.position = 'fixed';
+            jumpscare.style.top = '0';
+            jumpscare.style.left = '0';
+            jumpscare.style.width = '100%';
+            jumpscare.style.height = '100%';
+            jumpscare.style.backgroundColor = GLITCH_COLORS[Math.floor(Math.random() * 6)];
+            jumpscare.style.zIndex = '10000';
+            jumpscare.style.display = 'flex';
+            jumpscare.style.justifyContent = 'center';
+            jumpscare.style.alignItems = 'center';
+            jumpscare.style.fontSize = '6rem';
+            jumpscare.style.color = '#000';
+            jumpscare.style.textAlign = 'center';
+            jumpscare.style.fontFamily = '"CreepyFont", cursive';
+            jumpscare.textContent = HORROR_TEXTS[Math.floor(Math.random() * HORROR_TEXTS.length)];
+            
+            // Add image in 60% of cases
+            if(Math.random() > 0.4) {
+                const img = document.createElement('img');
+                img.src = SCARY_IMAGES[Math.floor(Math.random() * SCARY_IMAGES.length)];
+                img.style.maxWidth = '90%';
+                img.style.maxHeight = '90%';
+                jumpscare.innerHTML = '';
+                jumpscare.appendChild(img);
+            }
+            
+            document.body.appendChild(jumpscare);
+            
+            // Flash effect
+            const flash = document.getElementById('screen-flash');
+            flash.style.opacity = 0.9;
+            flash.style.backgroundColor = GLITCH_COLORS[Math.floor(Math.random() * GLITCH_COLORS.length)];
+            setTimeout(() => {
+                flash.style.opacity = 0;
+            }, 150);
+            
+            // Distortion effect
+            const distortion = document.getElementById('screen-distortion');
+            distortion.style.opacity = 0.7;
+            setTimeout(() => {
+                distortion.style.opacity = 0;
+            }, 800);
+            
+            // Remove after short time
+            setTimeout(() => {
+                jumpscare.remove();
+            }, 150 + Math.random() * 450);
+        }
+        
+        // Random screen flashes
+        function randomScreenFlashes() {
+            setInterval(() => {
+                if(Math.random() > 0.9) {
+                    const flash = document.getElementById('screen-flash');
+                    flash.style.opacity = 0.7;
+                    flash.style.backgroundColor = GLITCH_COLORS[Math.floor(Math.random() * GLITCH_COLORS.length)];
+                    setTimeout(() => {
+                        flash.style.opacity = 0;
+                    }, 50 + Math.random() * 200);
+                }
+            }, 1000 + Math.random() * 3000);
+        }
+        
+        // Random screen distortions
+        function randomScreenDistortions() {
+            setInterval(() => {
+                if(Math.random() > 0.9) {
+                    const distortion = document.getElementById('screen-distortion');
+                    distortion.style.opacity = 0.3 + Math.random() * 0.4;
+                    setTimeout(() => {
+                        distortion.style.opacity = 0;
+                    }, 200 + Math.random() * 800);
+                }
+            }, 2000 + Math.random() * 5000);
+        }
+        
+        // Random screen cracks
+        function randomScreenCracks() {
+            setInterval(() => {
+                if(Math.random() > 0.95) {
+                    const crack = document.getElementById('screen-crack');
+                    crack.style.opacity = 0.5 + Math.random() * 0.5;
+                    setTimeout(() => {
+                        crack.style.opacity = 0;
+                    }, 500 + Math.random() * 1500);
+                }
+            }, 5000 + Math.random() * 10000);
+        }
+        
+        // Dynamic style changes
+        function chaosStyles() {
+            setInterval(() => {
+                // Background color change
+                if(Math.random() > 0.8) {
+                    document.body.style.backgroundColor = `rgb(${Math.floor(Math.random() * 55)}, ${Math.floor(Math.random() * 10)}, ${Math.floor(Math.random() * 10)})`;
+                }
+                
+                // Main text change
+                if(Math.random() > 0.9) {
+                    const text = document.getElementById('glitch-text');
+                    text.style.color = GLITCH_COLORS[Math.floor(Math.random() * GLITCH_COLORS.length)];
+                    text.style.fontSize = (3 + Math.random() * 6) + 'rem';
+                    text.style.fontFamily = Math.random() > 0.5 ? '"CreepyFont", cursive' : '"DigitalHorror", monospace';
+                }
+                
+                // Epilepsy effect
+                if(Math.random() > 0.95) {
+                    document.body.style.animation = 'epilepsy-warning 0.5s infinite';
+                    setTimeout(() => {
+                        document.body.style.animation = '';
+                    }, 500 + Math.random() * 1500);
+                }
+                
+                // Cursor change
+                if(Math.random() > 0.97) {
+                    const cursor = document.getElementById('cursor');
+                    cursor.style.backgroundImage = `url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><circle cx="16" cy="16" r="14" fill="none" stroke="${GLITCH_COLORS[Math.floor(Math.random() * GLITCH_COLORS.length)]}" stroke-width="2"/><line x1="16" y1="0" x2="16" y2="32" stroke="${GLITCH_COLORS[Math.floor(Math.random() * GLITCH_COLORS.length)]}" stroke-width="1"/><line x1="0" y1="16" x2="32" y2="16" stroke="${GLITCH_COLORS[Math.floor(Math.random() * GLITCH_COLORS.length)]}" stroke-width="1"/></svg>')`;
+                }
+            }, 500);
+        }
+        
+        // Console terror
+        function consoleTerror() {
+            const errors = [
+                "Memory corruption at 0x" + Math.floor(Math.random() * 1000000).toString(16),
+                "Process terminated with code " + Math.floor(Math.random() * 666),
+                "Security breach detected in sector " + Math.floor(Math.random() * 10),
+                "Unauthorized reality access",
+                "System integrity compromised",
+                "Quantum decoherence detected",
+                "2025 protocol violation",
+                "Reality instability threshold exceeded",
+                "Entity detected in memory stack",
+                "THEY ARE WATCHING YOU",
+                "DON'T TRUST THE SIMULATION",
+                "YOUR MIND IS NOT YOUR OWN",
+                "CRITICAL FAILURE IN SECTOR " + Math.floor(Math.random() * 10),
+                "DIMENSIONAL BREACH DETECTED",
+                "YOUR SOUL HAS BEEN INDEXED",
+                "THE VOID IS CONSUMING YOU",
+                "SYSTEM//CORRUPTED",
+                "ERROR: REALITY NOT FOUND",
+                "WARNING: COGNITION FAILURE",
+                "ALERT: MEMORY WIPE INITIATED"
+            ];
+            
+            setInterval(() => {
+                console.error(errors[Math.floor(Math.random() * errors.length)]);
+                
+                if(Math.random() > 0.95) {
+                    console.clear();
+                    console.log("%cYOUR SYSTEM HAS BEEN COMPROMISED", "color: red; font-size: 24px; font-weight: bold;");
+                    console.log("%cTHEY ARE COMING", "color: #0f0; font-size: 18px;");
+                    console.log("%c2025 IS A LIE", "color: #00f; font-size: 18px;");
+                }
+            }, 1000 + Math.random() * 3000);
+        }
+        
+        // Initialize cursor
+        function initCursor() {
+            const cursor = document.getElementById('cursor');
+            cursor.style.display = 'block'; // Ensure cursor is always visible
+            
+            document.addEventListener('mousemove', function(e) {
+                cursor.style.left = (e.clientX - 16) + 'px';
+                cursor.style.top = (e.clientY - 16) + 'px';
+                
+                // Random cursor change
+                if(Math.random() > 0.98) {
+                    cursor.style.transform = `scale(${Math.random() * 3 + 0.5}) rotate(${Math.random() * 360}deg)`;
+                    cursor.style.animationDuration = Math.random() * 3 + 1 + 's';
+                }
+            });
+        }
+        
+        // Modal button handler
+        document.getElementById('nightmare-button').addEventListener('click', function() {
+            document.getElementById('nightmare-modal').style.display = 'none';
+            triggerJumpscare();
+        });
+        
+        // Prevent context menu
+        document.addEventListener('contextmenu', function(e) {
+            e.preventDefault();
+            triggerJumpscare();
+        });
+        
+        // Random URL changes
+        function randomUrlChanges() {
+            setInterval(() => {
+                if(Math.random() > 0.99) {
+                    const scaryUrls = [
+                        "about:blank",
+                        "data:text/html,<html><body style='background:black;color:red;font-family:monospace;text-align:center;padding-top:50px;'><h1>YOU ARE BEING WATCHED</h1></body></html>",
+                        "data:text/html,<html><body style='background:black;color:#0f0;font-family:monospace;text-align:center;padding-top:50px;'><h1>THEY ARE COMING</h1></body></html>"
+                    ];
+                    window.location.href = scaryUrls[Math.floor(Math.random() * scaryUrls.length)];
+                }
+            }, 15000);
+        }
+        
+        // ======================
+        // **INITIALIZE HELL (NO SAVES)**
+        // ======================
+        window.onload = function() {
+            initAudioHell();
+            spawnChaosElements();
+            spawn8BitAnimations();
+            spawnCreepyTexts();
+            spawnBinaryRain();
+            spawnScaryFaces();
+            spawnInteractivePatterns();
+            spawnDataNodes();
+            spawnQuantumDots();
+            spawnHolographicLines();
+            spawnNightmareModals();
+            setupJumpscares();
+            randomScreenFlashes();
+            randomScreenDistortions();
+            randomScreenCracks();
+            chaosStyles();
+            consoleTerror();
+            initCursor();
+            randomUrlChanges();
+            
+            // Random main text change
+            setInterval(() => {
+                document.getElementById('glitch-text').textContent = HORROR_TEXTS[Math.floor(Math.random() * HORROR_TEXTS.length)];
+                document.getElementById('subtext').textContent = HORROR_TEXTS[Math.floor(Math.random() * HORROR_TEXTS.length)];
+            }, 1000 + Math.random() * 3000);
+            
+            // Random theme change
+            setInterval(() => {
+                document.documentElement.style.setProperty('--glitch-red', GLITCH_COLORS[Math.floor(Math.random() * GLITCH_COLORS.length)]);
+                document.documentElement.style.setProperty('--glitch-green', GLITCH_COLORS[Math.floor(Math.random() * GLITCH_COLORS.length)]);
+                document.documentElement.style.setProperty('--glitch-blue', GLITCH_COLORS[Math.floor(Math.random() * GLITCH_COLORS.length)]);
+                document.documentElement.style.setProperty('--blood-color', GLITCH_COLORS[Math.floor(Math.random() * 6) + 10]);
+            }, 3000 + Math.random() * 7000);
+        };
+    </script>
+</body>
+</html>
