@@ -464,6 +464,63 @@
             cursor: pointer;
             animation: flicker 1s infinite;
         }
+
+        /* ========== КНОПКИ "НЕ НАЖИМАЙ" ========== */
+        .dont-press-button {
+            position: fixed;
+            padding: 15px 30px;
+            background-color: var(--glitch-red);
+            color: black;
+            border: 3px solid var(--glitch-green);
+            font-family: 'CreepyFont', cursive;
+            font-size: 2rem;
+            z-index: 9999;
+            cursor: pointer;
+            animation: 
+                epilepsy-warning 1s infinite,
+                shake-screen 0.5s infinite,
+                float-random 7s infinite;
+            text-shadow: 0 0 10px black;
+            box-shadow: 0 0 20px var(--glitch-purple);
+            transform: rotate(-5deg);
+            transition: all 0.3s;
+        }
+
+        .dont-press-button:hover {
+            background-color: var(--glitch-purple);
+            color: var(--glitch-yellow);
+            border-color: var(--glitch-red);
+            transform: scale(1.2) rotate(5deg);
+            animation: 
+                epilepsy-warning 0.3s infinite,
+                shake-screen 0.2s infinite,
+                float-random 3s infinite;
+        }
+
+        #dont-press-button1 {
+            bottom: 20px;
+            right: 20px;
+        }
+
+        #dont-press-button2 {
+            top: 20px;
+            left: 20px;
+            animation-duration: 5s, 0.3s, 9s;
+        }
+
+        #dont-press-button3 {
+            top: 50%;
+            left: 20px;
+            transform: translateY(-50%) rotate(5deg);
+            animation-duration: 2s, 0.7s, 11s;
+        }
+
+        #dont-press-button4 {
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%) rotate(-10deg);
+            animation-duration: 3s, 0.4s, 8s;
+        }
     </style>
 </head>
 <body>
@@ -500,6 +557,12 @@
     <div id="chaos-container"></div>
     <div id="8bit-container"></div>
     <div id="creepy-text-container"></div>
+    
+    <!-- ========== КНОПКИ "НЕ НАЖИМАЙ" ========== -->
+    <button id="dont-press-button1" class="dont-press-button">Не НаЖиМаЙ!!!</button>
+    <button id="dont-press-button2" class="dont-press-button">Не НаЖиМаЙ!!!</button>
+    <button id="dont-press-button3" class="dont-press-button">Не НаЖиМаЙ!!!</button>
+    <button id="dont-press-button4" class="dont-press-button">Не НаЖиМаЙ!!!</button>
     
     <!-- ========== AUDIO ELEMENTS ========== -->
     <audio id="bg-sound" loop></audio>
@@ -1411,6 +1474,22 @@
         document.getElementById('nightmare-button').addEventListener('click', function() {
             document.getElementById('nightmare-modal').style.display = 'none';
             triggerJumpscare();
+        });
+
+        // Don't press buttons handlers
+        document.querySelectorAll('.dont-press-button').forEach(button => {
+            button.addEventListener('click', function() {
+                triggerJumpscare();
+                playRandomSillySound();
+                this.style.transform = 'scale(3) rotate(360deg)';
+                setTimeout(() => {
+                    this.style.transform = this.id === 'dont-press-button3' 
+                        ? 'translateY(-50%) rotate(5deg)' 
+                        : this.id === 'dont-press-button4' 
+                            ? 'translateX(-50%) rotate(-10deg)' 
+                            : 'rotate(-5deg)';
+                }, 500);
+            });
         });
         
         // Prevent context menu
